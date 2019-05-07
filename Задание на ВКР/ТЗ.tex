@@ -1,0 +1,221 @@
+% !TEX program = xelatex
+%----------------------- Преамбула -----------------------
+\documentclass[utf8x, 14pt, oneside, a4paper]{article}
+
+\usepackage{extsizes} % Для добавления в параметры класса документа 14pt
+
+% Для работы с русским языком и шрифтом Times New Roman по-умолчанию
+\usepackage[russian]{babel}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% ГОСТовские настройки для полей
+\usepackage[left=30mm, right=10mm, top=20mm, bottom=20mm]{geometry}
+
+% Дополнительное окружение для подписей
+\usepackage{array}
+\newenvironment{signstabular}[1][1]{
+	\renewcommand*{\arraystretch}{#1}
+	\tabular
+}{
+	\endtabular
+}
+
+% Годные пакеты для обычных действий
+\usepackage{ulem} % Нормальное нижнее подчеркивание
+
+% ---------------------- Документ ----------------------
+\begin{document}
+	\thispagestyle{empty}
+	\begin{center}
+		\fontsize{12pt}{0.3\baselineskip}\selectfont \textbf{Министерство науки и высшего образования Российской Федерации \\ Федеральное государственное бюджетное образовательное учреждение \\ высшего образования \\ <<Московский государственный технический университет имени Н.Э. Баумана \\ (национальный исследовательский университет)>> \\ (МГТУ им. Н.Э. Баумана)}
+		
+		\fontsize{12pt}{0.5\baselineskip}\selectfont
+		\noindent \makebox[\linewidth]{\rule{\textwidth}{4pt}} \makebox[\linewidth]{\rule{\textwidth}{1pt}}
+	\end{center}
+
+	\begin{flushright}
+		\fontsize{12pt}{\baselineskip}\selectfont УТВЕРЖДАЮ \\ Заведующий кафедрой \textbf{<Кафедра (шифр)>}, \\ \textbf{<Должность>} \uline{\hspace*{2cm}} \textbf{<ФИО>} \\ <<\uline{\hspace*{1cm}}>> \uline{\hspace*{2.5cm}} \textbf{<Год>} г.
+	\end{flushright}
+
+	\vfill
+
+	\begin{center}
+		\fontsize{18pt}{\baselineskip}\selectfont \textbf{ЗАДАНИЕ}
+
+		\fontsize{16pt}{\baselineskip}\selectfont \textbf{на выполнение выпускной квалификационной работы <бакалавра/магистра/специалиста>}
+	\end{center}
+
+	\normalsize
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		Студент группы \textbf{<Группа (шифр)>} \center \textbf{<ФИО>} \\ (фамилия, имя, отчество)
+	\end{flushleft}
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		Тема квалификационной работы: \uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+	\end{flushleft}
+
+	\vfill
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		Источник тематики (НИР кафедры, заказ и пр.): \uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+	\end{flushleft}
+
+	\vfill
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		Тема квалификационной работы утверждена распоряжением по факультету
+		
+		\uline{\hspace*{5cm}} № \uline{\hspace*{3cm}} от <<\uline{\hspace*{5mm}}>> \uline{\hspace*{2.5cm}} 20\uline{\hspace*{5mm}} г.
+	\end{flushleft}
+
+	\vfill
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		\textbf{\textit{Часть 1. Исследовательская}}
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+	\end{flushleft}
+
+	\pagebreak
+
+	\thispagestyle{empty}
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		\textbf{\textit{Часть 2. Конструкторская}}
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+	\end{flushleft}
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		\textbf{\textit{Часть 3. Технологическая}}
+		
+		\uline{\hfill}
+
+		\uline{\hfill}
+
+		\uline{\hfill}
+	\end{flushleft}
+
+	\vfill
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		\textbf{\textit{Оформление квалификационной работы:}}
+		
+		Расчетно-пояснительная записка на 50-60 листах формата А4.
+
+		Перечень графического (иллюстративного) материала (чертежи, плакаты, слайды)
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+		
+		\uline{\hfill}
+	\end{flushleft}
+
+	\vfill
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+
+		Дата выдачи задания <<\textbf{<День>}>> \textbf{<Месяц>} \textbf{<Год>} г.
+
+		В соответствии с учебным планом выпускную квалификационную работу выполнить в полном объеме в срок до <<1>> июня \textbf{<Год>} г.
+	\end{flushleft}
+
+	\vfill
+
+	\begin{table}[h!]
+		\fontsize{12pt}{\baselineskip}\selectfont
+		\centering
+		\begin{signstabular}[0.7]{p{8cm} >{\centering\arraybackslash}p{3.8cm} >{\centering\arraybackslash}p{3.8cm}}
+			\textbf{Руководитель квалификационной работы} & \uline{\hspace*{3.8cm}} & \uline{\hfill <И. О. Фамилия> \hfill} \\
+			\rule{0pt}{0pt} & \fontsize{9pt}{\baselineskip}\selectfont (Подпись, дата) & \fontsize{9pt}{\baselineskip}\selectfont (И.О. Фамилия)
+
+		\end{signstabular}
+
+		\begin{signstabular}[0.7]{p{8cm} >{\centering\arraybackslash} >{\centering \arraybackslash}p{3.8cm} >{\centering\arraybackslash}p{3.8cm}}
+			\textbf{Студент} & \uline{\hspace*{3.8cm}} & \uline{\hfill <И.О. Фамилия> \hfill} \\
+			\rule{0pt}{0pt} & \fontsize{9pt}{\baselineskip}\selectfont (Подпись, дата) & \fontsize{9pt}{\baselineskip}\selectfont (И.О. Фамилия)
+
+		\end{signstabular}
+	\end{table}
+
+	\vfill
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont
+		\uline{Примечание:} Задание оформляется в двух экземплярах -- один выдается студенту, второй хранится на кафедре
+	\end{flushleft}
+\end{document}

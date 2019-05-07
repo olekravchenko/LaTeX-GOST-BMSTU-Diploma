@@ -1,0 +1,205 @@
+% !TEX program = xelatex
+%----------------------- Преамбула -----------------------
+\documentclass[utf8x, 14pt, oneside, a4paper]{article}
+
+\usepackage{extsizes} % Для добавления в параметры класса документа 14pt
+
+% Для работы с несколькими языками и шрифтом Times New Roman по-умолчанию
+\usepackage[english,russian]{babel}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% ГОСТовские настройки для полей и абзацев
+\usepackage[left=30mm,right=10mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{misccorr}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\setlength{\parindent}{1.25cm}
+\linespread{1.3}
+
+% Дополнительное окружения для подписей
+\usepackage{array}
+\newenvironment{signstabular}[1][1]{
+	\renewcommand*{\arraystretch}{#1}
+	\tabular
+}{
+	\endtabular
+}
+
+% Переопределение стандартных \section, \subsection, \subsubsection по ГОСТу
+\usepackage{titlesec}
+
+\titleformat{\section}[block]
+{\bfseries\normalsize\filcenter}{\thesection}{1em}{}
+
+\titleformat{\subsection}[hang]
+{\bfseries\normalsize}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}[hang]
+{\bfseries\normalsize}{\thesubsubsection}{1em}{}
+
+% Работа с изображениями и таблицами; переопределение названий по ГОСТу
+\usepackage{caption}
+\captionsetup[figure]{name={Рисунок},labelsep=endash}
+\captionsetup[table]{singlelinecheck=false, labelsep=endash}
+
+\usepackage{graphicx}
+\usepackage{slashbox} % Диагональное разделение первой ячейки в таблицах
+
+% Цвета для гиперссылок и листингов
+\usepackage{color}
+
+% Гиперссылки \toc с кликабельностью
+\usepackage{hyperref}
+
+\hypersetup{
+	linktoc=all,
+	linkcolor=black,
+	colorlinks=true,
+}
+
+% Годные пакеты для обычных действий
+\usepackage{ulem} % Нормальное нижнее подчеркивание
+\usepackage{hhline} % Двойная горизонтальная линия в таблицах
+\usepackage[figure,table]{totalcount} % Подсчет изображений, таблиц
+\usepackage{rotating} % Поворот изображения вместе с названием
+\usepackage{lastpage} % Для подсчета числа страниц
+
+% ---------------------- Документ ----------------------
+\begin{document}
+	\begin{titlepage}
+		\noindent\begin{minipage}{0.1\textwidth}
+			\includegraphics[scale=0.3]{1.png}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.8\textwidth}\raggedleft
+			\begin{center}
+				\fontsize{12pt}{0.3\baselineskip}\selectfont \textbf{Министерство науки и высшего образования Российской Федерации \\ Федеральное государственное бюджетное образовательное учреждение \\ высшего образования \\ <<Московский государственный технический университет \\ имени Н.Э. Баумана \\ (национальный исследовательский университет)>> \\ (МГТУ им. Н.Э. Баумана)}
+			\end{center}
+		\end{minipage}
+
+		\begin{center}
+			\fontsize{12pt}{0.1\baselineskip}\selectfont
+			\noindent\makebox[\linewidth]{\rule{\textwidth}{4pt}} \makebox[\linewidth]{\rule{\textwidth}{1pt}}
+		\end{center}
+
+		\begin{flushleft}
+			\fontsize{12pt}{0.8\baselineskip}\selectfont 
+			
+			ФАКУЛЬТЕТ \uline{<<\textbf{<Факультет (полностью)>}>> \hfill}
+
+			КАФЕДРА \uline{\hspace{4mm} <<\textbf{<Кафедра (полностью)>}>> \hfill}
+		\end{flushleft}
+
+		\vfill
+
+		\begin{center}
+			\fontsize{20pt}{\baselineskip}\selectfont
+
+			\textbf{РАСЧЕТНО-ПОЯСНИТЕЛЬНАЯ ЗАПИСКА}
+
+			\textbf{\textit{К ВЫПУСКНОЙ КВАЛИФИКАЦИОННОЙ РАБОТЕ}}
+
+			\textbf{\textit{НА ТЕМУ:}}
+		\end{center}
+
+		\begin{center}
+			\fontsize{18pt}{0.6cm}\selectfont 
+			
+			\uline{\hfill}
+	
+			\uline{\hfill}
+	
+			\uline{\hfill}
+	
+			\uline{\hfill}
+	
+			\uline{\hfill}
+		\end{center}
+
+		\vfill
+
+		\begin{table}[h!]
+			\fontsize{12pt}{0.7\baselineskip}\selectfont
+			\centering
+			\begin{signstabular}[0.7]{p{7.69cm} >{\centering\arraybackslash}p{4cm} >{\centering\arraybackslash}p{4cm}}
+				Студент группы \textbf{<Группа (Шифр)>} & \uline{\hspace*{4cm}} & \uline{\hfill \textbf{<И.О. Фамилия>} \hfill} \\
+				& \scriptsize (Подпись, дата) & \scriptsize (И.О. Фамилия)
+			\end{signstabular}
+
+			\vspace{\baselineskip}
+
+			\begin{signstabular}[0.7]{p{7.69cm} >{\centering\arraybackslash}p{4cm} >{\centering\arraybackslash}p{4cm}}
+				Руководитель ВКР & \uline{\hspace*{4cm}} & \uline{\hfill \textbf{<И.О. Фамилия>} \hfill} \\
+				& \scriptsize (Подпись, дата) & \scriptsize (И.О. Фамилия)
+			\end{signstabular}
+
+			\vspace{\baselineskip}
+
+			\begin{signstabular}[0.7]{p{7.69cm} >{\centering\arraybackslash}p{4cm} >{\centering\arraybackslash}p{4cm}}
+				Нормоконтроллер & \uline{\hspace*{4cm}} & \uline{\hfill \textbf{<И.О. Фамилия>} \hfill} \\
+				& \scriptsize (Подпись, дата) & \scriptsize (И.О. Фамилия)
+			\end{signstabular}
+		\end{table}
+
+		\vfill
+
+		\begin{center}
+			\normalsize \textit{\textbf{<Год>} г.}
+		\end{center}
+	\end{titlepage}
+
+	\normalsize
+	\setcounter{page}{4}
+	\section*{АННОТАЦИЯ}
+
+	\pagebreak
+
+	\section*{РЕФЕРАТ}
+		\begin{center}
+			Расчетно-пояснительная записка \pageref{LastPage} с., \totalfigures\ рис., \totaltables\ табл., Х ист., Х прил.
+
+			\textbf{<Ключевые слова>}
+		\end{center}
+
+		\pagebreak
+
+	% Переопределяем название \toc и выводим сам \toc
+	\renewcommand{\contentsname}{\normalsize\bfseries\centering СОДЕРЖАНИЕ}
+	\small
+	\tableofcontents
+	\normalsize
+
+		\pagebreak
+
+	\section*{ОПРЕДЕЛЕНИЯ, ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}
+
+		\pagebreak
+
+	\section*{ВВЕДЕНИЕ}
+		\addcontentsline{toc}{section}{ВВЕДЕНИЕ}
+
+		\pagebreak
+
+	\section{<Название исследовательской части>}
+
+		\pagebreak
+
+	\section{<Название конструкторской части>}
+
+		\pagebreak
+
+	\section{<Название технологической части>}
+
+		\pagebreak
+
+	\section*{ЗАКЛЮЧЕНИЕ}
+		\addcontentsline{toc}{section}{ЗАКЛЮЧЕНИЕ}
+
+		\pagebreak
+
+	\section*{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+		\addcontentsline{toc}{section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+
+		\pagebreak
+\end{document}

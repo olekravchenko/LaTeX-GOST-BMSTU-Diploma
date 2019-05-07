@@ -1,0 +1,90 @@
+% !TEX program = xelatex
+%----------------------- Преамбула -----------------------
+\documentclass[utf8x, 14pt, oneside, a4paper]{article}
+
+\usepackage{extsizes} % Для добавления в параметры класса документа 14pt
+
+% Для работы с несколькими языками и шрифтом Times New Roman по-умолчанию
+\usepackage[english,russian]{babel}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% ГОСТовские настройки для полей
+\usepackage[left=30mm,right=10mm,top=20mm,bottom=20mm]{geometry}
+
+% Дополнительное окружения для подписей
+\usepackage{array}
+\newenvironment{signstabular}[1][1]{
+	\renewcommand*{\arraystretch}{#1}
+	\tabular
+}{
+	\endtabular
+}
+
+% Годные пакеты для обычных действий
+\usepackage{ulem} % Нормальное нижнее подчеркивание
+\usepackage{multirow} % Объединение ячеек в таблицах
+
+% ---------------------- Документ ----------------------
+\begin{document}
+	\thispagestyle{empty}
+
+	\begin{center}
+		\fontsize{12pt}{0.3\baselineskip}\selectfont \textbf{Министерство науки и высшего образования Российской Федерации \\ Федеральное государственное бюджетное образовательное учреждение \\ высшего образования \\ <<Московский государственный технический университет имени Н.Э. Баумана \\ (национальный исследовательский университет)>> \\ (МГТУ им. Н.Э. Баумана)}
+
+		\fontsize{12pt}{0.5\baselineskip}\selectfont
+		\noindent \makebox[\linewidth]{\rule{\textwidth}{4pt}} \makebox[\linewidth]{\rule{\textwidth}{1pt}}
+	\end{center}
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont \textbf{ФАКУЛЬТЕТ} \textbf{<Факультет (полностью)>} \hfill УТВЕРЖДАЮ
+
+		\textbf{КАФЕДРА} \hspace{4.6mm} \textbf{<Кафедра (полностью)>} \hfill Заведующий кафедрой \textbf{<Кафедра (шифр)>}
+
+		\textbf{ГРУППА} \hspace{7mm} \textbf{<Группа (шифр)>} \hfill \textbf{<Должность>} \uline{\hspace*{2cm}} \textbf{<ФИО>}
+
+		\hfill <<\uline{\hspace*{1cm}}>> \uline{\hspace*{2.5cm}} \textbf{<Год>} г.
+	\end{flushleft}
+
+	\begin{center}
+		\normalsize
+
+		\textbf{КАЛЕНДАРНЫЙ ПЛАН \\ выполнения выпускной квалификационной работы}
+
+		студента: \textbf{<ФИО>}
+	\end{center}
+
+	\begin{flushleft}
+		\fontsize{12pt}{\baselineskip}\selectfont Тема квалификационной работы: \uline{\hfill} \\ \uline{\hfill}
+	\end{flushleft}
+
+	\begin{table}[h!]
+		\fontsize{10pt}{0.8\baselineskip}\selectfont
+		\centering
+		\begin{tabular}{|l|l|l|l|c|l|}
+			\hline
+			\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}№\\ п/п\end{tabular}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Наименование этапов выпускной\\ квалификационной работы\end{tabular}}}} & \multicolumn{2}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Сроки выполнения\\ этапов\end{tabular}}} & \multicolumn{2}{c|}{\textbf{Отметка о выполнении}} \\ \cline{3-6} 
+			& \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\textbf{план}} & \multicolumn{1}{c|}{\textbf{факт}} & \textbf{Должность} & \multicolumn{1}{c|}{\textbf{ФИО, подпись}} \\ \hline
+			1. & \begin{tabular}[c]{@{}l@{}}Задание на выполнение работы.\\ Формулирование проблемы, цели\\ и задач работы\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Руководитель\\ ВКР\end{tabular} & \\ \hline
+			2. & 1 часть. Исследовательская & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Руководитель\\ ВКР\end{tabular} & \\ \hline
+			3. & \begin{tabular}[c]{@{}l@{}}Утверждение окончательных\\ формулировок решаемой\\ проблемы, цели работы и перечня\\ задач\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Заведующий\\ кафедрой\end{tabular} & \\ \hline
+			4. & 2 часть. Конструкторская & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Руководитель\\ ВКР\end{tabular} & \\ \hline
+			5. & 3 часть. Технологическая & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Руководитель\\ ВКР\end{tabular} & \\ \hline
+			6. & 1-я редакция работы & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Руководитель\\ ВКР\end{tabular} & \\ \hline
+			7. & Подготовка доклада и презентации & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & & \\ \hline
+			8. & Заключение руководителя & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Руководитель\\ ВКР\end{tabular} & \\ \hline
+			9. & \begin{tabular}[c]{@{}l@{}}Допуск работы к защите на ГЭК\\ (нормоконтроль)\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & Нормоконтроллер & \\ \hline
+			10. & Внешняя рецензия & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & & \\ \hline
+			11. & Защита работы на ГЭК & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Планируемая дата}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\uline{\hspace*{1.7cm}}\\ \tiny \textit{Фактическая дата}\end{tabular} & & \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+	\vfill
+
+	\begin{center}
+		\fontsize{10pt}{0.8\baselineskip}\selectfont
+
+		\textit{Студент} \uline{\hspace*{4cm}} \hfill \textit{Руководитель работы} \uline{\hspace*{4cm}}
+	\end{center}
+\end{document}
