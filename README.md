@@ -99,8 +99,10 @@
 	using System;
 
 	namespace Program {
-		public static void Main() {
-			Console.Writeline("Hello, world!");
+		public class Program {
+			public static void Main() {
+				Console.Writeline("Hello, world!");
+			}
 		}
 	}
 	\end{lstlisting}
