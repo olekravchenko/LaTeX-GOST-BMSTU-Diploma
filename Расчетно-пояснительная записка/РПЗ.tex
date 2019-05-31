@@ -16,6 +16,7 @@
 \usepackage{enumitem}
 \setlength{\parindent}{1.25cm}
 \linespread{1.3}
+\setlist{nolistsep} % Отсутствие отступов между элементами \enumerate и \itemize
 
 % Дополнительное окружения для подписей
 \usepackage{array}
@@ -26,7 +27,8 @@
 	\endtabular
 }
 
-% Переопределение стандартных \section, \subsection, \subsubsection по ГОСТу
+% Переопределение стандартных \section, \subsection, \subsubsection по ГОСТу;
+% Переопределение их отступов до и после для 1.5 интервала во всем документе
 \usepackage{titlesec}
 
 \titleformat{\section}[block]
@@ -34,9 +36,11 @@
 
 \titleformat{\subsection}[hang]
 {\bfseries\normalsize}{\thesubsection}{1em}{}
+\titlespacing\subsection{\parindent}{\parskip}{\parskip}
 
 \titleformat{\subsubsection}[hang]
 {\bfseries\normalsize}{\thesubsubsection}{1em}{}
+\titlespacing\subsubsection{\parindent}{\parskip}{\parskip}
 
 % Работа с изображениями и таблицами; переопределение названий по ГОСТу
 \usepackage{caption}
